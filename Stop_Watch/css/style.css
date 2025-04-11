@@ -1,0 +1,40 @@
+body  {
+    background-color: #2d3436;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10rem 0;
+    gap: 2rem;
+}
+.watchTime {
+    display: grid;
+    font-weight: bold;
+    font-size: 2rem;
+    text-justify: center;
+    text-align: center;
+    gap: 2rem;
+}
+.watchTime .time {
+    background-color: #dfe6e9;
+    padding: 1rem 0;
+    border-radius: 1rem;
+}
+
+.buttons {
+    display: flex;
+    gap: .5rem;
+}
+
+.buttons button {
+    padding: 1.45rem 1rem;
+    border-radius: 50%;
+    border: none;
+    font-weight: bold;
+}
+.buttons .start:hover ,.stop:hover, .reset:hover {
+    opacity: .7;
+}
