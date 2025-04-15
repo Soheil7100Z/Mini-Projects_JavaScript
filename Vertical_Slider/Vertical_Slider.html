@@ -5,13 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/Vertical_Slider.css">
 
 
 	<title>Vertical Slider</title>
 </head>
 <body>
-    <div id="containe">
+    <div id="container">
         <div class="leftSide">
             <div style="background-color: #cd6133;">
                 <h1>Lion</h1>
@@ -34,12 +34,13 @@
         </div>
         <div class="buttons">
             <button class="down-button">
-                <i class="fas fa-arrow-down"></i>
+                <i class="fas fa-arrow-down" onclick="LeadingDown()"></i>
             </button>
-            <button class="up-button">
+            <button class="up-button" onclick="LeadingUp()">
                 <i class="fas fa-arrow-up"></i>
             </button>
         </div>
     </div>
+    <script src="./js/Vertical_Slider.js"></script>
 </body>
 </html>
