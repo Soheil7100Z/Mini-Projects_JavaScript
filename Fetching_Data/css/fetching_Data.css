@@ -1,0 +1,40 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #12CBC4;
+    margin: 2rem;
+
+}
+#container {
+    width: 250px;
+    height: 100vh;
+}
+h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+input {
+    margin: 1rem 0;
+    width: 100%;
+    padding: .5rem;
+    outline: none;
+    border: none;
+    border-radius: .5rem;
+}
+
+ li {
+width: 100%;
+background-color: #6F1E51;
+padding: .6rem;
+margin: .5rem 0;
+border-radius: .5rem;
+color: #fff;
+font-weight: bold;
+font-size: 1.1rem;
+display: flex;
+letter-spacing: .5px;
+justify-content: center;
+align-items: center;
+}
