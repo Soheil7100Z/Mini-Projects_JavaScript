@@ -1,5 +1,5 @@
 body{
-    height: 80vh;
+    height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,51 +12,54 @@ body{
     border: 2px #5de5fd solid;
     padding: 1rem 2rem;
     border-radius: 1rem;
-
 }
+
 h1 {
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-size: 1.55rem;
     color: #5de5fd;
     margin-bottom: 1.4rem;
 }
 
-#container li {
-    display: flex;
-    align-items: center;
-    margin: 1rem 0;
-    background-color: #5de5fd ;
-    padding: .8rem;
-    border-radius: .5rem;
-    font-size: 1.2rem;
-
-}
 .number {
-    /* border-right: 1px #1B1464 solid; */
     outline: 2px #1B1464 solid ;
     margin-right: .5rem;
     padding: 2.5px 6.5px;
     color: #1B1464;
 }
-.dragBox {
 
-
+.draggingBox {
+    background-color: #5de5fd ;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    padding: 1.5rem;
+    border-radius: .5rem;
+    font-size: 1.2rem;
+}
+li div.draggingBox.over {
+    background-color: #00a8ff;
 }
 .dragBox .name {
     font-weight: bold;
     color: #1B1464;
-    transform: translateX(50%);
+    transform: translateX(30px);
 }
 
 .button {
   margin-top: 2rem;
   padding: .7rem 1.5rem;
   background-color: #b71540;
-  border: none;
   border-radius: .5rem;
   font-weight: bold;
   font-size: 1rem;
+  cursor: pointer;
+  border: 2px solid #5de5fd;
 }
 .button:hover {
     opacity: .9;
+}
+.button:active{
+    transform: scale(0.95);
+    border: none;
 }
