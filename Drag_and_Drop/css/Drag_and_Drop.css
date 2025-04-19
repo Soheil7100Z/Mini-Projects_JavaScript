@@ -1,5 +1,5 @@
 body{
-    height: 85vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,26 +9,32 @@ body{
 #container {
     width: 350px;
     height: auto;
-    border: 2px #5de5fd solid;
+    border: 2px #c8d6e5 solid;
     padding: 1rem 2rem;
     border-radius: 1rem;
 }
-
 h1 {
     font-size: 1.55rem;
-    color: #5de5fd;
+    color: #c8d6e5;
     margin-bottom: 1.4rem;
 }
-
 .number {
     outline: 2px #1B1464 solid ;
     margin-right: .5rem;
     padding: 2.5px 6.5px;
     color: #1B1464;
 }
+#dragList li.deactive .number {
+    outline: 2px #009432 solid ;
+    color: #009432;
+}
 
+#dragList li.wrongActive .number {
+    outline: 2px #EA2027 solid ;
+    color: #EA2027;
+}
 .draggingBox {
-    background-color: #5de5fd ;
+    background-color: #c8d6e5 ;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -45,16 +51,22 @@ li div.draggingBox.over {
     color: #1B1464;
     transform: translateX(30px);
 }
-
 .button {
-  margin-top: 2rem;
+    width: 100%;
+  margin-top: .5rem;
   padding: .7rem 1.5rem;
   background-color: #b71540;
   border-radius: .5rem;
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
-  border: 2px solid #5de5fd;
+  border: 2px solid #c8d6e5;
+}
+.button.checking.hidden {
+    display: none;
+}
+.button.refresh.hidden {
+    display: none;
 }
 .button:hover {
     opacity: .9;
@@ -62,4 +74,10 @@ li div.draggingBox.over {
 .button:active{
     transform: scale(0.95);
     border: none;
+}
+#dragList li.notOrdered .name  {
+    color: #EA2027 ;
+}
+#dragList li.ordered .name  {
+    color: #009432 ;
 }

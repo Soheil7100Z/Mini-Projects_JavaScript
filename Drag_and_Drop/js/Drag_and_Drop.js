@@ -1,9 +1,10 @@
 let draggableList = document.querySelector('#dragList')
+let button = document.querySelector('.checking')
+let buttonRefresh = document.querySelector('.refresh')
 
 let Items = []
 let startIndex ;
 let endIndex;
-
 
 const PhysicistsName = [
     "Galileo Galilei",
@@ -11,13 +12,13 @@ const PhysicistsName = [
     "Marie Curie",
     "Albert Einstein",
     "Niels Bohr",
-    "Alan L Hart",
     "Chien-Shiung Wu",
     "Katherine Johnson",
     "Rosalind Franklin"
 ]
 
 listCreating()
+buttonRefresh.classList.add('hidden')
 
 function listCreating() {
 
@@ -70,20 +71,67 @@ function dragLeaveFuncktion() {
 }
 
 function dragOverFuncktion(e) {
-    e.preventDefault()
     this.classList.add('over')
+    e.preventDefault()
 }
 
 function dragDropFuncktion() {
     this.classList.remove('over')
     endIndex = +this.closest('li').getAttribute('NameID')
-    dragTrasnfering(startIndex,endIndex)
+    DragExchange(startIndex,endIndex)
 }
 
-function dragTrasnfering (S , E) {
+function DragExchange (S , E) {
+
     draggedItem = Items[S].querySelector('.draggingBox')
     droppedItem = Items[E].querySelector('.draggingBox')
 
     Items[S].appendChild(droppedItem)
     Items[E].appendChild(draggedItem)
+}
+
+function checkingOrder() {
+
+    Items.forEach((el,index) =>{
+        const nameOfPerson = el.querySelector('.name').innerText.trim()
+        if (nameOfPerson !== PhysicistsName[index]) {
+            el.classList.add('notOrdered')
+            el.classList.add('wrongActive')
+               } else {
+            el.classList.remove('notOrdered')
+            el.classList.add('ordered')
+               let check = el.querySelector('.draggingBox').draggable = false
+            if(!check) {
+                el.classList.remove('wrongActive')
+                el.classList.add('deactive')
+            }
+        }
+    })
+ }
+
+ function originalShowing() {
+
+    draggableList.innerHTML = ''
+    PhysicistsName.forEach((personName , index) =>{
+        Items.forEach((listTag) =>{
+            let checkingName = listTag.querySelector('.name').innerText.trim()
+            if(checkingName === personName) {
+                listTag.querySelector('.name').innerText = personName
+                listTag.querySelector('.name').style.color = '#1B1464'
+                listTag.querySelector('.number').innerText = index+1
+                listTag.querySelector('.draggingBox').draggable = false
+                orderedList(listTag)
+            }
+            return
+        })
+    })
+ }
+
+function orderedList (listT){
+
+    listT.classList.remove('deactive')
+    listT.classList.remove('wrongActive')
+    draggableList.appendChild(listT)
+    buttonRefresh.classList.remove('hidden')
+    button.classList.add('hidden')
 }
